@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            AI Interview Preparation Bot
+        </title>
+    </head>
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+.container{
+    width:500px;
+    margin:80px auto;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+h1{
+    color:#2c3e50;
+    font-size:32px;
+}
+
+h3{
+    color:#555;
+}
+
+select{
+    width:250px;
+    padding:10px;
+    font-size:16px;
+    margin:15px;
+}
+
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+}
+
+button:hover{
+    background:#1d4ed8;
+    opacity:0.7
+}
+</style>
+<body>
+    <div class="container">
+    <h1>
+        AI Interview Preparation Bot
+    </h1>
+    
+    <form method="POST">
+
+<h3>Select Domain</h3>
+<select name="domain">
+    <option>Python</option>
+    <option>SQL</option>
+    <option>Web Development</option>
+    <option>Data Science</option>
+</select>
+
+<h3>Select Level</h3>
+<select name="level">
+    <option>Easy</option>
+    <option>Intermediate</option>
+    <option>Advanced</option>
+</select>
+
+<h3>Select Answer Mode</h3>
+<select name="mode">
+    <option>Text</option>
+    <option>Voice</option>
+</select>
+
+<br><br>
+
+<button type="submit">
+    Start Interview
+</button>
+
+</form>
+    <br>
+
+    </div>
+</body>
+</html>
