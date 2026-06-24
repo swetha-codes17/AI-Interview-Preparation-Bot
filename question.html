@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interview Question</title>
+</head>
+<style>
+body{
+    background:#f4f6f9;
+    font-family:Arial,sans-serif;
+}
+
+.container{
+    width:600px;
+    margin:80px auto;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0px 4px 15px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+h1{
+    color:#2563eb;
+}
+
+textarea{
+    width:90%;
+    height: 150px;
+    font-size: 16px;
+    padding:10px;
+}
+
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+}
+.progress{
+    width:90%;
+    height:20px;
+    background:#ddd;
+    border-radius:10px;
+    margin:20px auto;
+}
+
+.progress-bar{
+    height:100%;
+    background:#2563eb;
+    border-radius:10px;
+}
+h2{
+    color:#2563eb
+}
+</style>
+<body>
+
+    <div class="container">
+
+        <h1>AI Interview Preparation Bot</h1>
+        <p><b>Domain:</b> {{ domain }}</p>
+        <p><b>Level:</b> {{ level }}</p>
+        <h2>Question {{ question_no }}/5</h2>
+        <h3>Question {{ question_no }}/5</h3>
+        <div class="progress">
+        <div class="progress-bar" style="width: {{ question_no * 20 }}%;">
+          </div>
+        </div>
+        <h3>{{ question }}</h3>
+
+        <form method="POST"  action="/submit_answer">
+        <input type = "hidden" name ="domain" value = "{{ domain }}">
+        <input type = "hidden" name ="level" value = "{{ level }}">
+            <textarea
+                name="answer"
+                rows="8"
+                cols="50"
+                placeholder="Type your answer here...">
+            </textarea>
+
+            <br><br>
+
+            <button type="submit">
+                Submit Answer
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
