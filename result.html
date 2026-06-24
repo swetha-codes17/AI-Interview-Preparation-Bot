@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interview Result</title>
+
+    <style>
+
+        body{
+            background:#f4f6f9;
+            font-family:Arial,sans-serif;
+        }
+
+        .container{
+            width:90%;
+            max-width: 1200px;
+            margin:40px auto;
+            background:white;
+            padding:40px;
+            border-radius:20px;
+            box-shadow:0px 4px 15px rgba(0,0,0,0.2);
+            text-align:center;
+        }
+        .header{
+    margin-bottom:30px;
+}
+
+.header h1{
+    color:#111827;
+    font-size:36px;
+}
+
+.header p{
+    color:#6b7280;
+    font-size:18px;
+}
+
+.score-box{
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    margin-bottom:30px;
+}
+
+.score-box h2{
+    font-size:55px;
+    margin:0;
+}
+
+.score-box p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+        h1{
+            color:#f30000;
+        }
+
+        .score{
+            font-size:30px;
+            font-weight:bold;
+            color:green;
+        }
+
+        .feedback{
+            margin-top:20px;
+            font-size:18px;
+        }
+
+        .interview-button{
+            background:#2563eb;
+            color:white;
+            border:none;
+            padding:15px 35px;
+            border-radius:8px;
+            font-size: 25px;
+            box-shadow:0px 4px 15px rgba(0,0,0,0.2);
+            transition: opacity 1s;
+            cursor:pointer;
+        }
+        .interview-button:hover{
+            opacity: 0.5;
+        }
+        .interview-button:active{
+            opacity: 0.3;
+        }
+        .strength-title{
+            color:#16a34a;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .weakness-title{
+            color:rgb(233, 98, 98);
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .excellent{
+    color:green;
+}
+
+.good{
+    color:orange;
+}
+
+.practice{
+    color:red;
+}
+
+.strength-title{
+    color:purple;
+}
+
+.weakness-title{
+    color:red;
+}
+h3{
+    color: rgb(242, 0, 234);
+}
+.stats{
+    display:flex;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.card{
+    flex:1;
+    background:#f8fafc;
+    padding:30px;
+    border-radius:12px;
+
+}
+.card h3{
+    color:#111827;
+    margin:0;
+    font-size: 35px;
+}
+
+.card p{
+    color:#6b7280;
+    font-size: 18px;
+}
+body{
+    background: #eef2ff;
+    font-family: Arial,sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+.feedback-card{
+    background:#f8fafc;
+    border: 1px solid #e2e8f0;
+    padding:20px;
+    border-radius:15px;
+    margin-top:30px;
+    text-align:left;
+}
+.badge-card{
+    background:#fff8dc;
+    padding:20px;
+    border-radius:15px;
+    margin-top:25px;
+    text-align:center;
+    border:2px solid gold;
+}
+.feedback-box{
+    margin-top:20px;
+    background:#f8fafc;
+    padding:15px;
+    border-radius:10px;
+}
+
+.feedback-box summary{
+    cursor:pointer;
+    font-weight:bold;
+}
+.analysis-section{
+    display:flex;
+    gap:20px;
+    margin-top:30px;
+}
+
+.analysis-card{
+    flex:1;
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.analysis-card h3{
+    margin-bottom:15px;
+}
+
+.analysis-card ul{
+    padding-left:20px;
+}
+
+.analysis-card li{
+    margin-bottom:10px;
+}
+.status{
+    margin-top:10px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.excellent{
+    color:#16a34a;
+}
+
+.good{
+    color:#f59e0b;
+}
+
+.practice{
+    color:#ef4444;
+}
+.topics-card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    margin-top:20px;
+}
+
+.topic{
+    display:inline-block;
+    background:#eef2ff;
+    color:#4338ca;
+    padding:8px 15px;
+    border-radius:20px;
+    margin:5px;
+    font-size:14px;
+}
+.progress-bar{
+    width:100%;
+    height:20px;
+    background:#ddd;
+    border-radius:20px;
+    overflow: hidden;
+    margin-top:15px;
+}
+
+.progress-fill{
+    height:100%;
+    background:linear-gradient(90deg,#4CAF50,#00C853);
+    border-radius:20px;
+    transition: width 0.5s ease;
+}
+    </style>
+</head>
+<body>
+<div class="container result-card">
+
+    <div class="header">
+    <h1>🤖 AI Interview Report</h1>
+
+    <p>
+        {{ domain }} | {{ level }}
+    </p>
+</div>
+
+<div class="score-box">
+    <h2>{{ readiness }}%</h2>
+    <p>Interview Readiness</p>
+</div>
+<div class="progress-bar">
+  <div class="progress-fill"
+      style="width: {{  readiness  }}%;"></div>
+</div>
+<div class="stats">
+
+    <div class="card">
+        <h3>{{ total_score }}/50</h3>
+        <p>Total Score</p>
+    </div>
+
+    <div class="card">
+        <h3>5</h3>
+        <p>Questions</p>
+    </div>
+
+    <div class="card">
+        <h3>{{ level }}</h3>
+        <p>Difficulty</p>
+    </div>
+
+</div>
+<div class="badge-card">
+
+<h3>🎁 Your Badge</h3>
+
+<h2>{{ badge }}</h2>
+
+ {% if readiness >= 80 %}
+<p class=" status excellent">🏆 Excellent</p>
+
+{% elif readiness >= 60 %}
+<p class=" status good">👍 Good</p>
+
+{% else %}
+<p class=" status practice">📚 Needs More Practice</p>
+{% endif %}
+</div>
+{% if readiness < 60 %}
+<div class="topics-card">
+    <h3>📚 Recommended Topics</h3>
+
+    <span class="topic">Variables</span>
+    <span class="topic">Loops</span>
+    <span class="topic">Functions</span>
+    <span class="topic">Dictionaries</span>
+</div>
+{% endif %}
+    <div class="feedback-card">
+
+<h3>🧠 AI Feedback</h3>
+
+<details class="feedback-box">
+
+<summary>🧠 View AI Feedback</summary>
+
+<p>{{ feedback }}</p>
+
+</details>
+
+</div>
+<div class="analysis-section">
+
+    <div class="analysis-card">
+        <h3>💪 Strengths</h3>
+
+        <ul>
+        {% for s in strengths %}
+            <li>{{ s }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+
+    <div class="analysis-card">
+        <h3>⚠ Weaknesses</h3>
+
+        <ul>
+        {% for w in weaknesses %}
+            <li>{{ w }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+
+</div> 
+    <br>
+
+    <a href="/">
+        <button class="interview-button">Start New Interview</button>
+    </a>
+
+</div>
+{% if readiness >= 80%}
+<script
+src = "https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+    confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: {y: 0.6}
+    });
+</script>
+{% endif %}
+</body>
+</html>
